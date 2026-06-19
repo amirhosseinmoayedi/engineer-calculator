@@ -1,0 +1,1 @@
+{"type":"module","scripts":{"test":"node --test test/*.test.mjs","build":"node --check src/calculations.mjs && node --check src/app.mjs"},"dependencies":{},"devDependencies":{}}

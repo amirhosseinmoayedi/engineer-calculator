@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Calculator Assistant</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Local browser calculator</p>
+        <h1>Engineering Calculator Assistant</h1>
+        <p class="lede">Estimate storage, traffic, throughput, retention, replication, and growth while seeing every step of the calculation.</p>
+      </section>
+      <section class="grid">
+        <article class="panel inputs">
+          <label for="scenario">Natural-language notes</label>
+          <textarea id="scenario" rows="7" placeholder="We receive 5000 Kafka messages per minute.&#10;Average message size is 2 KB.&#10;Retention is 5 days.&#10;Replication factor is 3."></textarea>
+          <div class="row two">
+            <label>Calculator type<select id="calculator"></select></label>
+            <label>Unit mode<select id="unitSystem"><option value="decimal">Decimal: 1 KB = 1000 bytes</option><option value="binary">Binary: 1 KiB = 1024 bytes</option></select></label>
+          </div>
+          <div id="dynamicForm" class="form"></div>
+          <div class="actions"><button id="copyResult">Copy result</button><button id="shareUrl" class="secondary">Copy share URL</button></div>
+        </article>
+        <article class="panel result">
+          <div class="resultHeader"><div><p class="eyebrow">Approximate estimate</p><h2 id="resultTitle">Result</h2></div><span id="badge">Includes replication</span></div>
+          <div id="summaryCards" class="cards"></div>
+          <div id="steps"></div>
+          <p class="note">All estimates are approximate. Validate against real compression ratios, protocol overhead, indexes, compaction, retention policies, and production monitoring.</p>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="src/app.mjs"></script>
+  </body>
+</html>
